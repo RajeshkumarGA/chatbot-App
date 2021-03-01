@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-ChatBot App/Pods-ChatBot App-frameworks.sh
+${BUILT_PRODUCTS_DIR}/InputBarAccessoryView/InputBarAccessoryView.framework
+${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework
+${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework

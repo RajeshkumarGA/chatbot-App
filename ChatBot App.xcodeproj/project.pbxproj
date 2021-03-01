@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		992C4A7D4C4640C80E3B7B74 /* Pods_ChatBot_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FABBCB8F1E80DF42482D8F /* Pods_ChatBot_AppTests.framework */; };
 		A72A24AE3B831B09A1A6C4EC /* Pods_ChatBot_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44F6CD7C50C9696E03AF1C2 /* Pods_ChatBot_App.framework */; };
+		E03E5EE025ED269F002DF76E /* BackUpData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E5EDF25ED269F002DF76E /* BackUpData+CoreDataProperties.swift */; };
+		E03E5EE125ED269F002DF76E /* BackUpData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E5EDE25ED269F002DF76E /* BackUpData+CoreDataClass.swift */; };
 		E041344225EB777C00B2328C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041344125EB777C00B2328C /* AppDelegate.swift */; };
 		E041344425EB777C00B2328C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041344325EB777C00B2328C /* SceneDelegate.swift */; };
 		E041344625EB777C00B2328C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041344525EB777C00B2328C /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		BD9E4A38A5EEA3E637DA1B82 /* Pods-ChatBot AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBot AppTests.release.xcconfig"; path = "Target Support Files/Pods-ChatBot AppTests/Pods-ChatBot AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C44F6CD7C50C9696E03AF1C2 /* Pods_ChatBot_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatBot_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D289993603C8C3C668C7C36B /* Pods-ChatBot App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBot App.debug.xcconfig"; path = "Target Support Files/Pods-ChatBot App/Pods-ChatBot App.debug.xcconfig"; sourceTree = "<group>"; };
+		E03E5EDE25ED269F002DF76E /* BackUpData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BackUpData+CoreDataClass.swift"; path = "/Users/icluster/Desktop/ChatBot App/ChatBot App/ChatDataLocalStorage/BackUpData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		E03E5EDF25ED269F002DF76E /* BackUpData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BackUpData+CoreDataProperties.swift"; path = "/Users/icluster/Desktop/ChatBot App/ChatBot App/ChatDataLocalStorage/BackUpData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		E041343E25EB777C00B2328C /* ChatBot App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatBot App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E041344125EB777C00B2328C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E041344325EB777C00B2328C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 		E04134D025EC0B4800B2328C /* ChatDataLocalStorage */ = {
 			isa = PBXGroup;
 			children = (
+				E03E5EDE25ED269F002DF76E /* BackUpData+CoreDataClass.swift */,
+				E03E5EDF25ED269F002DF76E /* BackUpData+CoreDataProperties.swift */,
 				E04134CA25EC0B0C00B2328C /* ChatData+CoreDataClass.swift */,
 				E04134C925EC0B0C00B2328C /* ChatData+CoreDataProperties.swift */,
 			);
@@ -491,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04134A625EBE1C800B2328C /* ApiError.swift in Sources */,
+				E03E5EE025ED269F002DF76E /* BackUpData+CoreDataProperties.swift in Sources */,
 				E04134CC25EC0B0C00B2328C /* ChatData+CoreDataClass.swift in Sources */,
 				E041344625EB777C00B2328C /* ViewController.swift in Sources */,
 				E041344C25EB777C00B2328C /* ChatBot_App.xcdatamodeld in Sources */,
@@ -503,6 +510,7 @@
 				E04134C225EBFF0400B2328C /* ChatViewControllerExtension.swift in Sources */,
 				E041348425EB8C3300B2328C /* ChatViewController.swift in Sources */,
 				E04134D525EC862400B2328C /* localHistoryManager.swift in Sources */,
+				E03E5EE125ED269F002DF76E /* BackUpData+CoreDataClass.swift in Sources */,
 				E041349E25EBE03E00B2328C /* ApiManager.swift in Sources */,
 				E041344425EB777C00B2328C /* SceneDelegate.swift in Sources */,
 			);

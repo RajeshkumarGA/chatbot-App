@@ -16,10 +16,20 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                                 messageId: String(messageId),
                                 sentDate: Date(),
                                 kind: .text(text)))
-        self.getChatResponseFromServer(chat: text)
         
-        LocalHistoryManager.shared.saveChatToCoreData(sender: user.displayName, messageId: messageId, sentDate: Date(), message: text)
-
+        print(reachability.connection.description)
+//        WiFi,Cellular
+        if reachability.connection.description == "WiFi" || reachability.connection.description == "Cellular"{
+            DispatchQueue.main.async {
+                self.getChatResponseFromServer(chat: text)
+                LocalHistoryManager.shared.saveChatToCoreData(sender: self.user.displayName, messageId: self.messageId, sentDate: Date(), message: text, entityName: "ChatData")
+            }
+        }else{
+            DispatchQueue.main.async {
+                LocalHistoryManager.shared.saveChatToCoreData(sender: self.user.displayName, messageId: self.messageId, sentDate: Date(), message: text, entityName: "BackUpData")
+            }
+        }
+      
     inputBar.inputTextView.text = ""
     messagesCollectionView.reloadData()
     messagesCollectionView.scrollToBottom(animated: true)

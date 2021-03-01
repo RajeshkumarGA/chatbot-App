@@ -15,19 +15,19 @@ class LocalHistoryManager{
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func getAllChats() -> [SavedChats]{
+    func getAllChats(entityName: String) -> [SavedChats]{
         var allSavedChats = [SavedChats]()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ChatData")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         fetchRequest.returnsObjectsAsFaults = false
         do {
             let records = try context.fetch(fetchRequest)
             
             for chat in records as! [NSManagedObject]{
                 allSavedChats.append(SavedChats(messageId: chat.value(forKey: "messageId") as! Int, sender: chat.value(forKey: "sender") as! String, sentDate: chat.value(forKey: "sentDate") as! Date, message: chat.value(forKey: "message") as! String))
-                print(chat.value(forKey: "messageId"))
-                print(chat.value(forKey: "sender"))
-                print(chat.value(forKey: "sentDate"))
-                print(chat.value(forKey: "message"))
+//                print(chat.value(forKey: "messageId"))
+//                print(chat.value(forKey: "sender"))
+//                print(chat.value(forKey: "sentDate"))
+//                print(chat.value(forKey: "message"))
             }
         } catch {
             print("Fetching Failed")
@@ -35,9 +35,9 @@ class LocalHistoryManager{
         return allSavedChats
     }
     
-    func saveChatToCoreData(sender : String,messageId: Int,sentDate: Date,message: String){
+    func saveChatToCoreData(sender : String,messageId: Int,sentDate: Date,message: String,entityName: String){
         
-        let entity = NSEntityDescription.entity(forEntityName: "ChatData", in: context)
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
         newUser.setValue(messageId, forKey: "messageId")
         newUser.setValue(sender, forKey: "sender")
@@ -50,6 +50,24 @@ class LocalHistoryManager{
         }
         
     }
+    
+    func deleteAllDataFromCoreData(){
+        var allSavedChats = [SavedChats]()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "BackUpData")
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let records = try context.fetch(fetchRequest)
+            
+            for chat in records{
+                context.delete(chat as! NSManagedObject)
+            }
+            try context.save()
+            } catch {
+                print("delete Failed")
+            }
+    }
+    
+    
 
     
 }

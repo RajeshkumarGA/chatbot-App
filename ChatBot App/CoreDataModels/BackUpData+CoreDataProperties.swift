@@ -1,9 +1,8 @@
 //
-//  BackUpData+CoreDataProperties.swift
-//  
+//  AppDelegate.swift
+//  ChatBot App
 //
-//  Created by RajeshKumar on 01/03/21.
-//
+//  Created by RajeshKumar on 28/02/21.
 //
 
 import Foundation
@@ -16,9 +15,9 @@ extension BackUpData {
         return NSFetchRequest<BackUpData>(entityName: "BackUpData")
     }
 
-    @NSManaged public var sender: String?
-    @NSManaged public var sentDate: Date?
     @NSManaged public var message: String?
     @NSManaged public var messageId: Int64
+    @NSManaged public var sender: String?
+    @NSManaged public var sentDate: Date?
 
 }

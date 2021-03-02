@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1064421C25EE108E008527DF /* ChatData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064421B25EE108E008527DF /* ChatData+CoreDataClass.swift */; };
+		1064422E25EE10F0008527DF /* ChatData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064422D25EE10F0008527DF /* ChatData+CoreDataClass.swift */; };
+		1064423625EE1107008527DF /* ChatData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064423525EE1107008527DF /* ChatData+CoreDataProperties.swift */; };
+		1064423B25EE110A008527DF /* BackUpData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064423A25EE110A008527DF /* BackUpData+CoreDataClass.swift */; };
+		1064424025EE110D008527DF /* BackUpData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064423F25EE110D008527DF /* BackUpData+CoreDataProperties.swift */; };
+		10944BDB25EDF87600E55CAF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10944BDA25EDF87600E55CAF /* CoreDataManager.swift */; };
+		10944BE025EDF91A00E55CAF /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10944BDF25EDF91A00E55CAF /* CoreDataClient.swift */; };
+		10944BF825EDFF1500E55CAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10944BF725EDFF1500E55CAF /* DataManager.swift */; };
+		10BE1E8E25EDECA0001321CE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BE1E8D25EDECA0001321CE /* Enums.swift */; };
+		10BE1E9725EDEE01001321CE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BE1E9625EDEE01001321CE /* NetworkManager.swift */; };
 		992C4A7D4C4640C80E3B7B74 /* Pods_ChatBot_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FABBCB8F1E80DF42482D8F /* Pods_ChatBot_AppTests.framework */; };
 		A72A24AE3B831B09A1A6C4EC /* Pods_ChatBot_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44F6CD7C50C9696E03AF1C2 /* Pods_ChatBot_App.framework */; };
-		E03E5EE025ED269F002DF76E /* BackUpData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E5EDF25ED269F002DF76E /* BackUpData+CoreDataProperties.swift */; };
-		E03E5EE125ED269F002DF76E /* BackUpData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E5EDE25ED269F002DF76E /* BackUpData+CoreDataClass.swift */; };
 		E041344225EB777C00B2328C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041344125EB777C00B2328C /* AppDelegate.swift */; };
 		E041344425EB777C00B2328C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041344325EB777C00B2328C /* SceneDelegate.swift */; };
-		E041344625EB777C00B2328C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041344525EB777C00B2328C /* ViewController.swift */; };
 		E041344925EB777C00B2328C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E041344725EB777C00B2328C /* Main.storyboard */; };
 		E041344C25EB777C00B2328C /* ChatBot_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E041344A25EB777C00B2328C /* ChatBot_App.xcdatamodeld */; };
 		E041344E25EB777F00B2328C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E041344D25EB777F00B2328C /* Assets.xcassets */; };
@@ -21,14 +28,11 @@
 		E041345C25EB777F00B2328C /* ChatBot_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041345B25EB777F00B2328C /* ChatBot_AppTests.swift */; };
 		E041346725EB778000B2328C /* ChatBot_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041346625EB778000B2328C /* ChatBot_AppUITests.swift */; };
 		E041348425EB8C3300B2328C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041348325EB8C3300B2328C /* ChatViewController.swift */; };
-		E041349E25EBE03E00B2328C /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041349D25EBE03E00B2328C /* ApiManager.swift */; };
+		E041349E25EBE03E00B2328C /* ApiCallsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E041349D25EBE03E00B2328C /* ApiCallsManager.swift */; };
 		E04134A625EBE1C800B2328C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134A525EBE1C800B2328C /* ApiError.swift */; };
 		E04134B725EBFDF600B2328C /* MessageResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134B625EBFDF600B2328C /* MessageResponce.swift */; };
 		E04134BC25EBFE2600B2328C /* ChatResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134BB25EBFE2600B2328C /* ChatResponce.swift */; };
-		E04134C225EBFF0400B2328C /* ChatViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134C125EBFF0400B2328C /* ChatViewControllerExtension.swift */; };
-		E04134CB25EC0B0C00B2328C /* ChatData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134C925EC0B0C00B2328C /* ChatData+CoreDataProperties.swift */; };
-		E04134CC25EC0B0C00B2328C /* ChatData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134CA25EC0B0C00B2328C /* ChatData+CoreDataClass.swift */; };
-		E04134D525EC862400B2328C /* localHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134D425EC862400B2328C /* localHistoryManager.swift */; };
+		E04134D525EC862400B2328C /* CoreDataQueryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134D425EC862400B2328C /* CoreDataQueryManager.swift */; };
 		E04134DA25EC8B0000B2328C /* SavedChats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134D925EC8B0000B2328C /* SavedChats.swift */; };
 		E04134DF25EC957E00B2328C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04134DE25EC957E00B2328C /* Reachability.swift */; };
 		E7E142E7FE4676A9B179544B /* Pods_ChatBot_App_ChatBot_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC547F00A68399E39DACADD /* Pods_ChatBot_App_ChatBot_AppUITests.framework */; };
@@ -52,6 +56,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1064421B25EE108E008527DF /* ChatData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatData+CoreDataClass.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/Commons/ChatData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		1064422D25EE10F0008527DF /* ChatData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatData+CoreDataClass.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/Commons/ChatData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		1064423525EE1107008527DF /* ChatData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatData+CoreDataProperties.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/CoreDataModels/ChatData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		1064423A25EE110A008527DF /* BackUpData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BackUpData+CoreDataClass.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/CoreDataModels/BackUpData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		1064423F25EE110D008527DF /* BackUpData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BackUpData+CoreDataProperties.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/CoreDataModels/BackUpData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		10944BDA25EDF87600E55CAF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		10944BDF25EDF91A00E55CAF /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
+		10944BF725EDFF1500E55CAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		10BE1E8D25EDECA0001321CE /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		10BE1E9625EDEE01001321CE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1CC547F00A68399E39DACADD /* Pods_ChatBot_App_ChatBot_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatBot_App_ChatBot_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D1B27C63DBD593319F91A0 /* Pods-ChatBot AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBot AppTests.debug.xcconfig"; path = "Target Support Files/Pods-ChatBot AppTests/Pods-ChatBot AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A120FF2306360FFF0166E47 /* Pods-ChatBot App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBot App.release.xcconfig"; path = "Target Support Files/Pods-ChatBot App/Pods-ChatBot App.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,12 +74,9 @@
 		BD9E4A38A5EEA3E637DA1B82 /* Pods-ChatBot AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBot AppTests.release.xcconfig"; path = "Target Support Files/Pods-ChatBot AppTests/Pods-ChatBot AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		C44F6CD7C50C9696E03AF1C2 /* Pods_ChatBot_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatBot_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D289993603C8C3C668C7C36B /* Pods-ChatBot App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBot App.debug.xcconfig"; path = "Target Support Files/Pods-ChatBot App/Pods-ChatBot App.debug.xcconfig"; sourceTree = "<group>"; };
-		E03E5EDE25ED269F002DF76E /* BackUpData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BackUpData+CoreDataClass.swift"; path = "/Users/icluster/Desktop/ChatBot App/ChatBot App/ChatDataLocalStorage/BackUpData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		E03E5EDF25ED269F002DF76E /* BackUpData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BackUpData+CoreDataProperties.swift"; path = "/Users/icluster/Desktop/ChatBot App/ChatBot App/ChatDataLocalStorage/BackUpData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		E041343E25EB777C00B2328C /* ChatBot App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatBot App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E041344125EB777C00B2328C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E041344325EB777C00B2328C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E041344525EB777C00B2328C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E041344825EB777C00B2328C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E041344B25EB777C00B2328C /* ChatBot_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatBot_App.xcdatamodel; sourceTree = "<group>"; };
 		E041344D25EB777F00B2328C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,14 +89,11 @@
 		E041346625EB778000B2328C /* ChatBot_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBot_AppUITests.swift; sourceTree = "<group>"; };
 		E041346825EB778000B2328C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E041348325EB8C3300B2328C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		E041349D25EBE03E00B2328C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		E041349D25EBE03E00B2328C /* ApiCallsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCallsManager.swift; sourceTree = "<group>"; };
 		E04134A525EBE1C800B2328C /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		E04134B625EBFDF600B2328C /* MessageResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponce.swift; sourceTree = "<group>"; };
 		E04134BB25EBFE2600B2328C /* ChatResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponce.swift; sourceTree = "<group>"; };
-		E04134C125EBFF0400B2328C /* ChatViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerExtension.swift; sourceTree = "<group>"; };
-		E04134C925EC0B0C00B2328C /* ChatData+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatData+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E04134CA25EC0B0C00B2328C /* ChatData+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E04134D425EC862400B2328C /* localHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localHistoryManager.swift; sourceTree = "<group>"; };
+		E04134D425EC862400B2328C /* CoreDataQueryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataQueryManager.swift; sourceTree = "<group>"; };
 		E04134D925EC8B0000B2328C /* SavedChats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedChats.swift; sourceTree = "<group>"; };
 		E04134DE25EC957E00B2328C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FE6F32DB4A327672C6093FF5 /* Pods-ChatBot App-ChatBot AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBot App-ChatBot AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ChatBot App-ChatBot AppUITests/Pods-ChatBot App-ChatBot AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +127,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1064422025EE1094008527DF /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		1064422225EE10DB008527DF /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				1064423A25EE110A008527DF /* BackUpData+CoreDataClass.swift */,
+				1064423525EE1107008527DF /* ChatData+CoreDataProperties.swift */,
+				1064423F25EE110D008527DF /* BackUpData+CoreDataProperties.swift */,
+				1064422D25EE10F0008527DF /* ChatData+CoreDataClass.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		10944BD925EDF85D00E55CAF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				10944BDA25EDF87600E55CAF /* CoreDataManager.swift */,
+				E04134D425EC862400B2328C /* CoreDataQueryManager.swift */,
+				10944BDF25EDF91A00E55CAF /* CoreDataClient.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		10BE1E8C25EDEC61001321CE /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				1064421B25EE108E008527DF /* ChatData+CoreDataClass.swift */,
+				10BE1E8D25EDECA0001321CE /* Enums.swift */,
+				E04134A525EBE1C800B2328C /* ApiError.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		10BE1E9525EDEDEC001321CE /* ApiManagers */ = {
+			isa = PBXGroup;
+			children = (
+				E041349D25EBE03E00B2328C /* ApiCallsManager.swift */,
+				10BE1E9625EDEE01001321CE /* NetworkManager.swift */,
+			);
+			path = ApiManagers;
+			sourceTree = "<group>";
+		};
 		49288AD366EF7E99703B382F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +212,9 @@
 		E041344025EB777C00B2328C /* ChatBot App */ = {
 			isa = PBXGroup;
 			children = (
-				E04134D025EC0B4800B2328C /* ChatDataLocalStorage */,
+				1064422225EE10DB008527DF /* CoreDataModels */,
+				1064422025EE1094008527DF /* New Group */,
+				10BE1E8C25EDEC61001321CE /* Commons */,
 				E04134AA25EBFD7000B2328C /* Models */,
 				E041349C25EBE00C00B2328C /* Managers */,
 				E041349825EBC94E00B2328C /* Views */,
@@ -192,8 +249,6 @@
 		E041349625EBC92800B2328C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E04134C025EBFECA00B2328C /* Extensions */,
-				E041344525EB777C00B2328C /* ViewController.swift */,
 				E041348325EB8C3300B2328C /* ChatViewController.swift */,
 			);
 			path = Controllers;
@@ -211,10 +266,10 @@
 		E041349C25EBE00C00B2328C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				10944BD925EDF85D00E55CAF /* CoreData */,
+				10BE1E9525EDEDEC001321CE /* ApiManagers */,
 				E04134DE25EC957E00B2328C /* Reachability.swift */,
-				E041349D25EBE03E00B2328C /* ApiManager.swift */,
-				E04134D425EC862400B2328C /* localHistoryManager.swift */,
-				E04134A525EBE1C800B2328C /* ApiError.swift */,
+				10944BF725EDFF1500E55CAF /* DataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -227,25 +282,6 @@
 				E04134D925EC8B0000B2328C /* SavedChats.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		E04134C025EBFECA00B2328C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E04134C125EBFF0400B2328C /* ChatViewControllerExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E04134D025EC0B4800B2328C /* ChatDataLocalStorage */ = {
-			isa = PBXGroup;
-			children = (
-				E03E5EDE25ED269F002DF76E /* BackUpData+CoreDataClass.swift */,
-				E03E5EDF25ED269F002DF76E /* BackUpData+CoreDataProperties.swift */,
-				E04134CA25EC0B0C00B2328C /* ChatData+CoreDataClass.swift */,
-				E04134C925EC0B0C00B2328C /* ChatData+CoreDataProperties.swift */,
-			);
-			path = ChatDataLocalStorage;
 			sourceTree = "<group>";
 		};
 		F85F9BA5C2D6EA0D0B18A21C /* Frameworks */ = {
@@ -496,22 +532,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10BE1E9725EDEE01001321CE /* NetworkManager.swift in Sources */,
 				E04134A625EBE1C800B2328C /* ApiError.swift in Sources */,
-				E03E5EE025ED269F002DF76E /* BackUpData+CoreDataProperties.swift in Sources */,
-				E04134CC25EC0B0C00B2328C /* ChatData+CoreDataClass.swift in Sources */,
-				E041344625EB777C00B2328C /* ViewController.swift in Sources */,
+				10BE1E8E25EDECA0001321CE /* Enums.swift in Sources */,
 				E041344C25EB777C00B2328C /* ChatBot_App.xcdatamodeld in Sources */,
+				10944BE025EDF91A00E55CAF /* CoreDataClient.swift in Sources */,
+				1064423B25EE110A008527DF /* BackUpData+CoreDataClass.swift in Sources */,
 				E041344225EB777C00B2328C /* AppDelegate.swift in Sources */,
 				E04134BC25EBFE2600B2328C /* ChatResponce.swift in Sources */,
-				E04134CB25EC0B0C00B2328C /* ChatData+CoreDataProperties.swift in Sources */,
+				10944BF825EDFF1500E55CAF /* DataManager.swift in Sources */,
 				E04134DA25EC8B0000B2328C /* SavedChats.swift in Sources */,
+				1064422E25EE10F0008527DF /* ChatData+CoreDataClass.swift in Sources */,
 				E04134DF25EC957E00B2328C /* Reachability.swift in Sources */,
 				E04134B725EBFDF600B2328C /* MessageResponce.swift in Sources */,
-				E04134C225EBFF0400B2328C /* ChatViewControllerExtension.swift in Sources */,
+				1064424025EE110D008527DF /* BackUpData+CoreDataProperties.swift in Sources */,
 				E041348425EB8C3300B2328C /* ChatViewController.swift in Sources */,
-				E04134D525EC862400B2328C /* localHistoryManager.swift in Sources */,
-				E03E5EE125ED269F002DF76E /* BackUpData+CoreDataClass.swift in Sources */,
-				E041349E25EBE03E00B2328C /* ApiManager.swift in Sources */,
+				1064421C25EE108E008527DF /* ChatData+CoreDataClass.swift in Sources */,
+				E04134D525EC862400B2328C /* CoreDataQueryManager.swift in Sources */,
+				E041349E25EBE03E00B2328C /* ApiCallsManager.swift in Sources */,
+				1064423625EE1107008527DF /* ChatData+CoreDataProperties.swift in Sources */,
+				10944BDB25EDF87600E55CAF /* CoreDataManager.swift in Sources */,
 				E041344425EB777C00B2328C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,7 +730,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APSJ899466;
+				DEVELOPMENT_TEAM = 2Z28C6NQN7;
 				INFOPLIST_FILE = "ChatBot App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -710,7 +750,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APSJ899466;
+				DEVELOPMENT_TEAM = 2Z28C6NQN7;
 				INFOPLIST_FILE = "ChatBot App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

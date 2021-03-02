@@ -10,17 +10,8 @@ import UIKit
 import MessageKit
 import InputBarAccessoryView
 import CoreData
-struct Sender: SenderType{
-    var senderId: String
-    var displayName: String
-}
 
-struct Message : MessageType {
-    var sender: SenderType
-    var messageId: String
-    var sentDate: Date
-    var kind: MessageKind
-}
+
 
 class ChatViewController: MessagesViewController,MessagesDataSource,MessagesLayoutDelegate,MessagesDisplayDelegate,UITextFieldDelegate {
     
@@ -30,12 +21,15 @@ class ChatViewController: MessagesViewController,MessagesDataSource,MessagesLayo
     let otherUser = Sender(senderId: "other", displayName: "MediBuddy")
     var messageId : Int = 1
     var messages = [MessageType]()
+    let apiCallmanager = ApiCallsManager()
+    let coreDataClient = CoreDataClient()
+    let dataManager = DataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         self.setUpDelegates()
         self.getChatHistory()
-//        LocalHistoryManager.shared.deleteAllDataFromCoreData()
         
         
         reachability.whenReachable = { _ in
@@ -58,11 +52,11 @@ class ChatViewController: MessagesViewController,MessagesDataSource,MessagesLayo
         }
     }
     override func viewDidAppear(_ animated: Bool) {
-            self.becomeFirstResponder()
-            self.setUpMessageInputBar()
-        }
+        self.becomeFirstResponder()
+        self.setUpMessageInputBar()
+    }
     
-       
+    
     func setUpDelegates(){
         messageInputBar.delegate = self
         messagesCollectionView.messagesDataSource = self
@@ -93,95 +87,119 @@ class ChatViewController: MessagesViewController,MessagesDataSource,MessagesLayo
         return messages.count
     }
     
-    func getChatHistory(){
-        var history : [SavedChats] = LocalHistoryManager.shared.getAllChats(entityName: "ChatData")
-        for d in history{
-            var sender = self.user
-            guard let msgId = d.messageId else {return}
-            guard let senderName = d.sender else {return}
-            guard let sentDate = d.sentDate else {return}
-            guard let message = d.message else {return}
-            if senderName == "chatBot"{
-                sender = self.user
-            }else{
-                sender = self.otherUser
-            }
-            self.insertNewMessage(Message(sender: sender,
-                                          messageId: String(msgId),
-                                          sentDate: sentDate,
-                                          kind: .text(message)))
+    func getChatHistory() {
+        let messages = dataManager.getChatHistory(userName: self.user, otherUserName: self.otherUser)
+        for i in 0..<messages.count {
+            self.insertNewMessage(messages[i])
+        }
+    }
+    
+    func getBackUpData() {
+        let messages = dataManager.getBackUpData(userName: self.user, otherUserName: self.otherUser)
+        for i in 0..<messages.count {
+            self.insertNewMessage(messages[i])
+            getChatResponseFromServer(chat: messages[i].text)
+        }
+        coreDataClient.deleteAllDataFromCoreData()
+    }
+    
+    
+    
+    
+    
+    func insertNewMessage(_ message: Message) {
+        messages.append(message)
+        DispatchQueue.main.async {
+            self.messagesCollectionView.reloadData()
+        }
+        DispatchQueue.main.async {
+            self.messagesCollectionView.scrollToBottom(animated: true)
+        }
+    }
+    
+    func getChatResponseFromServer(chat: String) {
+        self.messageId += 1
+        DispatchQueue.main.async{
+            self.apiCallmanager.getChatMessageFromBotServer(chatMessage: chat,completionHandler: { response, error in
+                if let errorMessage = error {
+                    self.showErrorAlert(title:"OOPS",message:errorMessage)
+                }
+                if let _ = response,let message = response?.message?.message {
+                    self.insertNewMessage(Message(text: chat, sender: self.otherUser,
+                                                  messageId: String(self.messageId),
+                                                  sentDate: Date(),
+                                                  kind: .text(message)))
+                    self.coreDataClient.saveChatToCoreData(sender: self.otherUser.displayName, messageId: self.messageId, sentDate: Date(), message: message, entityName: "ChatData")
+                }
+                
+                
+            })}
+    }
+    
+    
+    
+    private func showErrorAlert(title:String,message:String) {
+        let alertVc:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
             
+        }
+        alertVc.addAction(alertAction)
+        DispatchQueue.main.async {
+            self.navigationController?.present(alertVc, animated: true)
         }
         
     }
-    
-    func getBackUpData(){
-        var history : [SavedChats] = LocalHistoryManager.shared.getAllChats(entityName: "BackUpData")
-        if history.count == 0{
-            print("No data")
-        }else{
-            for d in history{
-                var sender = self.user
-                guard let msgId = d.messageId else {return}
-                guard let senderName = d.sender else {return}
-                guard let sentDate = d.sentDate else {return}
-                guard let message = d.message else {return}
-                if senderName == "chatBot"{
-                    sender = self.user
-                }else{
-                    sender = self.otherUser
-                }
-                self.insertNewMessage(Message(sender: sender,
-                                              messageId: String(msgId),
-                                              sentDate: sentDate,
-                                              kind: .text(message)))
-                self.getChatResponseFromServer(chat: message)
-                
-            }
-        }
-        LocalHistoryManager.shared.deleteAllDataFromCoreData()
-    }
-    
-    func insertNewMessage(_ message: Message) {
-            messages.append(message)
-            DispatchQueue.main.async {
-                self.messagesCollectionView.reloadData()
-            }
-            DispatchQueue.main.async {
-                self.messagesCollectionView.scrollToLastItem(animated: true)
-            }
-        }
-    
-    func getChatResponseFromServer(chat: String) {
-        var replayMessage : String = ""
-        self.messageId += 1
-        DispatchQueue.main.async{
-            getChatData.shared.getChatMessageFromBotServer(chatMessage: chat, userCompletionHandler: { message, error in
-             replayMessage =  message
-             self.insertNewMessage(Message(sender: self.otherUser,
-                                           messageId: String(self.messageId),
-                                    sentDate: Date(),
-                                    kind: .text(replayMessage)))
-                LocalHistoryManager.shared.saveChatToCoreData(sender: self.otherUser.displayName, messageId: self.messageId, sentDate: Date(), message: replayMessage, entityName: "ChatData")
-        })}
-    }
+}
+
+
+extension ChatViewController {
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1): #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     }
-
+    
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         if message.sender.senderId == user.senderId {
             avatarView.image = #imageLiteral(resourceName: "IMG_0204")
         } else {
-        avatarView.image = #imageLiteral(resourceName: "medibuddyWithName")
-
+            avatarView.image = #imageLiteral(resourceName: "medibuddyWithName")
+            
         }
     }
     
-    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
+    internal func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight: .bottomLeft
         return .bubbleTail(corner, .curved)
     }
 }
+
+
+extension ChatViewController: InputBarAccessoryViewDelegate {
+    
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        self.messageId+=1
+        self.insertNewMessage(Message(text: text, sender: user,
+                                messageId: String(messageId),
+                                sentDate: Date(),
+                                kind: .text(text)))
+        
+        print(reachability.connection.description)
+//        WiFi,Cellular
+        if reachability.connection.description == "WiFi" || reachability.connection.description == "Cellular"{
+            DispatchQueue.main.async {
+                self.getChatResponseFromServer(chat: text)
+                self.coreDataClient.saveChatToCoreData(sender: self.user.displayName, messageId: self.messageId, sentDate: Date(), message: text, entityName: "ChatData")
+            }
+        }else{
+            DispatchQueue.main.async {
+                self.coreDataClient.saveChatToCoreData(sender: self.user.displayName, messageId: self.messageId, sentDate: Date(), message: text, entityName: "BackUpData")
+            }
+        }
+      
+    inputBar.inputTextView.text = ""
+    messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToBottom(animated: false)
+  }
+}
+
 

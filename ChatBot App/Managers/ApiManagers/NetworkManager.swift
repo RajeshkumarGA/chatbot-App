@@ -29,9 +29,10 @@ class NetworkManager {
             }
         }
         print(urlString)
-        var request = URLRequest(url: URL(string: urlString)!)
-        
-        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        var request = URLRequest(url: url)
         do {
             let data = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)
             request.httpBody = method == .post ? data : nil

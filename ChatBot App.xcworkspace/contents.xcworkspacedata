@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ChatBot App/BackUpData+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ChatBot App/BackUpData+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ChatBot App/ChatData+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ChatBot App/ChatData+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:ChatBot App.xcodeproj">
    </FileRef>
    <FileRef

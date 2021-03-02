@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1064421C25EE108E008527DF /* ChatData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064421B25EE108E008527DF /* ChatData+CoreDataClass.swift */; };
-		1064422E25EE10F0008527DF /* ChatData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064422D25EE10F0008527DF /* ChatData+CoreDataClass.swift */; };
-		1064423625EE1107008527DF /* ChatData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064423525EE1107008527DF /* ChatData+CoreDataProperties.swift */; };
-		1064423B25EE110A008527DF /* BackUpData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064423A25EE110A008527DF /* BackUpData+CoreDataClass.swift */; };
-		1064424025EE110D008527DF /* BackUpData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1064423F25EE110D008527DF /* BackUpData+CoreDataProperties.swift */; };
 		10944BDB25EDF87600E55CAF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10944BDA25EDF87600E55CAF /* CoreDataManager.swift */; };
 		10944BE025EDF91A00E55CAF /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10944BDF25EDF91A00E55CAF /* CoreDataClient.swift */; };
 		10944BF825EDFF1500E55CAF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10944BF725EDFF1500E55CAF /* DataManager.swift */; };
@@ -56,11 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1064421B25EE108E008527DF /* ChatData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatData+CoreDataClass.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/Commons/ChatData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		1064422D25EE10F0008527DF /* ChatData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatData+CoreDataClass.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/Commons/ChatData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		1064423525EE1107008527DF /* ChatData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatData+CoreDataProperties.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/CoreDataModels/ChatData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		1064423A25EE110A008527DF /* BackUpData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BackUpData+CoreDataClass.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/CoreDataModels/BackUpData+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		1064423F25EE110D008527DF /* BackUpData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "BackUpData+CoreDataProperties.swift"; path = "/Users/akashdeep/apps/chatbot-App/ChatBot App/CoreDataModels/BackUpData+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		10944BDA25EDF87600E55CAF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		10944BDF25EDF91A00E55CAF /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
 		10944BF725EDFF1500E55CAF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -137,10 +127,6 @@
 		1064422225EE10DB008527DF /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				1064423A25EE110A008527DF /* BackUpData+CoreDataClass.swift */,
-				1064423525EE1107008527DF /* ChatData+CoreDataProperties.swift */,
-				1064423F25EE110D008527DF /* BackUpData+CoreDataProperties.swift */,
-				1064422D25EE10F0008527DF /* ChatData+CoreDataClass.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -158,7 +144,6 @@
 		10BE1E8C25EDEC61001321CE /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				1064421B25EE108E008527DF /* ChatData+CoreDataClass.swift */,
 				10BE1E8D25EDECA0001321CE /* Enums.swift */,
 				E04134A525EBE1C800B2328C /* ApiError.swift */,
 			);
@@ -537,20 +522,15 @@
 				10BE1E8E25EDECA0001321CE /* Enums.swift in Sources */,
 				E041344C25EB777C00B2328C /* ChatBot_App.xcdatamodeld in Sources */,
 				10944BE025EDF91A00E55CAF /* CoreDataClient.swift in Sources */,
-				1064423B25EE110A008527DF /* BackUpData+CoreDataClass.swift in Sources */,
 				E041344225EB777C00B2328C /* AppDelegate.swift in Sources */,
 				E04134BC25EBFE2600B2328C /* ChatResponce.swift in Sources */,
 				10944BF825EDFF1500E55CAF /* DataManager.swift in Sources */,
 				E04134DA25EC8B0000B2328C /* SavedChats.swift in Sources */,
-				1064422E25EE10F0008527DF /* ChatData+CoreDataClass.swift in Sources */,
 				E04134DF25EC957E00B2328C /* Reachability.swift in Sources */,
 				E04134B725EBFDF600B2328C /* MessageResponce.swift in Sources */,
-				1064424025EE110D008527DF /* BackUpData+CoreDataProperties.swift in Sources */,
 				E041348425EB8C3300B2328C /* ChatViewController.swift in Sources */,
-				1064421C25EE108E008527DF /* ChatData+CoreDataClass.swift in Sources */,
 				E04134D525EC862400B2328C /* CoreDataQueryManager.swift in Sources */,
 				E041349E25EBE03E00B2328C /* ApiCallsManager.swift in Sources */,
-				1064423625EE1107008527DF /* ChatData+CoreDataProperties.swift in Sources */,
 				10944BDB25EDF87600E55CAF /* CoreDataManager.swift in Sources */,
 				E041344425EB777C00B2328C /* SceneDelegate.swift in Sources */,
 			);
@@ -730,7 +710,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Z28C6NQN7;
+				DEVELOPMENT_TEAM = APSJ899466;
 				INFOPLIST_FILE = "ChatBot App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -750,7 +730,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2Z28C6NQN7;
+				DEVELOPMENT_TEAM = APSJ899466;
 				INFOPLIST_FILE = "ChatBot App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

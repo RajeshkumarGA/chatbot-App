@@ -1,8 +1,9 @@
 //
-//  AppDelegate.swift
-//  ChatBot App
+//  BackUpData+CoreDataProperties.swift
+//  
 //
-//  Created by RajeshKumar on 28/02/21.
+//  Created by RajeshKumar on 02/03/21.
+//
 //
 
 import Foundation
